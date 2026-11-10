@@ -80,7 +80,7 @@ def proc(comm, exe="", cmdline=""):
 def test_sshd_not_filtered_by_ancestor_chain():
     """sshd 是 SSH 会话的祖先进程，绝不能被当成噪声。"""
     chain = {"100", "101", "46"}      # 46 = sshd
-    info = proc("sshd", exe="", cmdline="sshd: fde [priv]")
+    info = proc("sshd", exe="", cmdline="sshd: appuser [priv]")
     chk(M.is_noise_proc("46", info, chain, self_pid="100") is False,
         "祖先链里的 sshd 不被过滤（SSH 场景必备）")
     chk(M.score_hint(info, "sshd") == 100,
