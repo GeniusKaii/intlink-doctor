@@ -1,0 +1,32 @@
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ── 运行产物（本地生成，不进库）──
+intlink-packages/
+intlink-report/
+intlink-out-*/
+report-*/
+*-report/
+*-out/
+*-pkgs/
+
+# ── 测试产物 ──
+tests/gui-shots/
+tests/fixtures/
+tests/*.log
+
+# ── 证据包与抓包（可能含个人信息，绝不进库）──
+*.tar.gz
+*.tgz
+*.pcap
+*.pcapng
+
+# ── 编辑器 ──
+.vscode/
+.idea/
+*.swp
+.DS_Store
